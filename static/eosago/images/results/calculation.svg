@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="58px" viewBox="0 0 52 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 59 (101010) - https://sketch.com -->
+    <title>DD55CEFC-CACA-42FB-BECC-38AF6FFFCC89</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Desk" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desk:ОСАГО:Выдача" transform="translate(-758.000000, -235.000000)">
+            <g id="Group-11" transform="translate(64.000000, 200.000000)">
+                <g id="Group-14" transform="translate(688.000000, 32.000000)">
+                    <g id="ICON-/-40-/-Color-/-Ins-/-insauto-40-ICON-/-64-/-Color-/-Basic-/-calculations">
+                        <polygon id="boundbox" points="0 0 64 0 64 64 0 64"></polygon>
+                        <g id="Group-31" transform="translate(7.000000, 4.000000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            <path d="M24,56 L2,56 C0.896,56 0,55.104 0,54 L0,2 C0,0.896 0.896,0 2,0 L39,0 C40.104,0 41,0.896 41,2 L41,19" id="Stroke-1" stroke="#28467F"></path>
+                            <path d="M48,56 L30,56 C28.896,56 28,55.104 28,54 L28,26 C28,24.896 28.896,24 30,24 L48,24 C49.104,24 50,24.896 50,26 L50,54 C50,55.104 49.104,56 48,56 Z" id="Stroke-3" stroke="#F57C00"></path>
+                            <path d="M35,44 L34,44 C32.896,44 32,43.104 32,42 C32,40.896 32.896,40 34,40 L35,40 C36.104,40 37,40.896 37,42 C37,43.104 36.104,44 35,44 Z" id="Stroke-5" stroke="#F57C00"></path>
+                            <path d="M44,44 L43,44 C41.896,44 41,43.104 41,42 C41,40.896 41.896,40 43,40 L44,40 C45.104,40 46,40.896 46,42 C46,43.104 45.104,44 44,44 Z" id="Stroke-7" stroke="#F57C00"></path>
+                            <path d="M35,52 L34,52 C32.896,52 32,51.104 32,50 C32,48.896 32.896,48 34,48 L35,48 C36.104,48 37,48.896 37,50 C37,51.104 36.104,52 35,52 Z" id="Stroke-9" stroke="#F57C00"></path>
+                            <path d="M44,52 L43,52 C41.896,52 41,51.104 41,50 C41,48.896 41.896,48 43,48 L44,48 C45.104,48 46,48.896 46,50 C46,51.104 45.104,52 44,52 Z" id="Stroke-11" stroke="#F57C00"></path>
+                            <line x1="28" y1="36" x2="49" y2="36" id="Stroke-13" stroke="#F57C00"></line>
+                            <polyline id="Stroke-15" stroke="#28467F" points="5 9 7 11 11 7"></polyline>
+                            <line x1="16" y1="9" x2="36" y2="9" id="Stroke-17" stroke="#28467F"></line>
+                            <polyline id="Stroke-19" stroke="#28467F" points="5 19 7 21 11 17"></polyline>
+                            <line x1="16" y1="19" x2="36" y2="19" id="Stroke-21" stroke="#28467F"></line>
+                            <polyline id="Stroke-23" stroke="#28467F" points="5 29 7 31 11 27"></polyline>
+                            <line x1="16" y1="29" x2="22" y2="29" id="Stroke-25" stroke="#28467F"></line>
+                            <polyline id="Stroke-27" stroke="#28467F" points="5 39 7 41 11 37"></polyline>
+                            <line x1="16" y1="39" x2="22" y2="39" id="Stroke-29" stroke="#28467F"></line>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

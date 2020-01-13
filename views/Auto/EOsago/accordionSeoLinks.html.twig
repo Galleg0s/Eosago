@@ -1,0 +1,21 @@
+{# делаем из плоского списка 3 колонки #}
+{% if links is defined %}
+	{% set columns = links ? links|batch(links|length/3) : [] %}
+{% endif %}
+
+<div class="columns-list-tile columns-list-tile--col-count_3 seo-block__content">
+	{% for column in columns %}
+		<ul class="columns-list-tile__item seo-block__column">
+			{% for link in column %}
+				<li class="seo-block__link">
+					<a class="link link--type-default link--size-small" href="{{ link.url }}">
+						<span class="link__body seo-block__link-body">
+							{{ link.title | stripSlashes | raw }}
+						</span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+
+	{% endfor %}
+</div>

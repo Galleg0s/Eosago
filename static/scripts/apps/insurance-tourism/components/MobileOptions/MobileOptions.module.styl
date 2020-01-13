@@ -1,0 +1,15 @@
+@import '~react-ui-2018/style-constants/colors.styl'
+@import '~react-ui-2018/style-constants/indents.styl'
+
+.dot
+	position relative
+
+	&:after
+		content ''
+		position absolute
+		width $indentXS
+		height $indentXS
+		background-color $colorMinorGreen
+		border-radius 50%
+		left $indentXS
+		top 6px

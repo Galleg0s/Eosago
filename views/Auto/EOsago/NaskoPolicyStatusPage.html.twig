@@ -1,0 +1,23 @@
+{% extends '@BankiruInsurance/main.html.twig' %}
+
+{% block body %}
+	<div class="padding-left-large padding-right-large padding-bottom-default">
+		{% from 'partials/breadcrumbs.html.twig' import breadcrumbs as breadcrumbs %}
+		{{ breadcrumbs(breadcrumbs) }}
+
+		<section id="nasko-status-info"></section>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		banki.utils.domReady.push(function() {
+			require([ "{{ static_asset('/static/bundles/ui-2013/InsuranceBundle/scripts/nasko-status-info.js') }}"], function(NaskoStatus){
+				new NaskoStatus.default({
+					orderId: {{ orderId }}
+				});
+			})
+		})
+	</script>
+{% endblock %}

@@ -1,0 +1,34 @@
+.widget-infoblock
+	background-color $colorDarkDesaturatedBlue
+	color white
+	padding $marginDefault
+
+	&__title
+		font-weight bold
+		font-size $fontSizeMedium
+		margin-bottom $marginDefault
+
+	&__text
+		margin-bottom $marginDefault
+
+	&__content-link
+		margin-top 10px
+
+		.infoblock-pseudo
+			color $colorBrightSkyBlue
+			border-bottom 1px dashed $colorBrightSkyBlue
+			cursor pointer
+
+			&:hover
+				color $colorLinkHover
+				border-bottom 1px dashed $colorLinkHover
+
+			&__content
+				display none
+				margin $marginDefault 0
+				background-color white
+				padding $marginDefault
+				color $colorText
+
+		.infoblock-link
+			color  $colorBrightSkyBlue

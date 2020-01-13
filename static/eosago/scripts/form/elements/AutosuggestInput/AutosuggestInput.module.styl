@@ -1,0 +1,64 @@
+// TODO скопировано из src/Bankiru/MainBundle/Resources/static/input-dropdown-select-address/theme.module.styl
+@require '~react-ui-2018/style-constants/shadows.styl'
+@require '~react-ui-2018/style-constants/colors.styl'
+@require '~react-ui-2018/style-constants/text.styl'
+@require '~react-ui-2018/style-constants/indents.styl'
+@require '~react-ui-2018/style-constants/border.styl'
+@import '~react-ui-2018/style-constants/z-index.styl'
+
+.container
+	flex 1 0 50px
+
+.input
+	border none
+	outline none
+	box-sizing border-box
+	width 100%
+	margin 2px 0
+	font-size inherit
+	min-width 50px
+	padding 1px 0
+
+	&::placeholder
+		color $grayTrans3
+
+.inputFocused
+	outline none
+
+.suggestionsContainer
+	position absolute !important
+	padding 0
+	left 0
+	overflow-y scroll
+	border-radius $borderRadius
+	border-top 0
+	width 100%
+	display none // иначе в ff артефакты
+
+.suggestionsContainerOpen
+	background-color #fff
+	display block
+	z-index $menuSubsectionZIndex
+	shadowLevel3()
+
+.suggestion
+	cursor pointer
+	padding $indentXS $indentS
+	textSize5()
+
+.suggestionList
+	margin 0
+	padding 0
+	list-style-type none
+
+.sectionContainer
+	border-top 1px solid $colorMinorGrayLighten2
+
+.sectionContainerFirst
+	border-top 0
+
+.suggestionHighlighted
+	background-color $colorMinorBlackLighten2
+
+.suggestionMatch
+	textWeightBolder()

@@ -1,0 +1,42 @@
+{% extends '@BankiruInsurance/main.html.twig' %}
+
+{% import "BankiruDFPBundle:macros:dfp-banner.html.twig" as dfp %}
+{% block body %}
+    <div class="padding-left-default padding-right-default padding-bottom-default">
+        <div class="grid__row grid__row--v-lg">
+            <div class="grid__cell grid__cell--12 grid__cell--lg-9">
+                {% from 'partials/breadcrumbs.html.twig' import breadcrumbs as breadcrumbs %}
+                {{ breadcrumbs(breadcrumbs) }}
+            </div>
+        </div>
+        {% if result is empty %}
+        <h1 class="header-h0">Спасибо за покупку!</h1>
+        <div class="header-subtitle">
+            <p>Электронный полис оплачен и в течение 30 минут будет отправлен на email.
+                Если полис не пришел на указанный email (и его нет в папке Спам), а также по любым другим проблемам
+                пишите на <a href="mailto:insurance@banki.ru">insurance@banki.ru</a>.</p>
+        </div>
+        {% else %}
+        <h1 class="header-h0">Спасибо за покупку!</h1>
+        <div class="header-subtitle">
+            <p>Электронный полис оплачен и в течение 30 минут будет отправлен на <strong>{{ result.email }}</strong>.
+                Если полис не пришел на указанный email (и его нет в папке Спам), а также по любым другим проблемам
+                пишите на <a href="mailto:insurance@banki.ru">insurance@banki.ru</a>.</p>
+        </div>
+        <div class="definition-list definition-list--divided widget">
+            <div class="definition-list__item">
+                <span class="definition-list__title">Страховая компания</span>
+                <div class="definition-list__desc">{{ result.name }}</div>
+            </div>
+            <div class="definition-list__item">
+                <span class="definition-list__title">Номер полиса</span>
+                <div class="definition-list__desc"><span>{{ result.agreementNumber }}</span></div>
+            </div>
+            <div class="definition-list__item">
+                <span class="definition-list__title">Стоимость</span>
+                <div class="definition-list__desc"><strong>{{ result.insurancePremium }} ₽</strong></div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

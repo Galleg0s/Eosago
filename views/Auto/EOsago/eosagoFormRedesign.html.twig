@@ -1,0 +1,32 @@
+{% extends 'BankiruLayout2018Bundle:layouts:full.html.twig' %}
+{% set scrollAnchorId = 'osago-scroll-anchor' %}
+{% set layoutIsWide = true %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ static_asset('/static/bundles/ui-2018/InsuranceBundle/eosago/styles/eosago-redesign.css') }}" rel="stylesheet"/>
+{% endblock stylesheets %}
+
+{% block content %}
+	<article class="{% if isDesktopDevice() %}bg-minor-black-lighten2{% endif %}">
+		<section class="layout-wrapper layout-wrapper--no-padding padding-bottom-default padding-top-{% if isMobileDevice() %}default{% else %}medium{% endif %}">
+			<h1 class="padding-vert-default text-align-center text-size-1 text-weight-bold" id="{{ scrollAnchorId }}">
+				Калькулятор ОСАГО
+			</h1>
+
+			<div
+					id="react-root"
+					class="insurance__container"
+					data-module="{{ static_asset('/static/bundles/ui-2018/InsuranceBundle/eosago/scripts/form.js') }}"
+					data-module-options='{"busUrl": "{{ busUrl }}"}'
+			>
+				<div class="{% if isDesktopDevice() %}panel{% endif %}">
+					<div class="ui-loading-overlay-big ui-loading-hidden-content"></div>
+				</div>
+			</div>
+		</section>
+		{% if app.debug == false %}
+			<script src="{{ static_asset('/static/bundles/ui-2018/react-redux.js') }}"></script>
+		{% endif %}
+	</article>
+{% endblock %}

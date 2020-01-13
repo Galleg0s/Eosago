@@ -1,0 +1,33 @@
+.insurance-product-showcase-row
+	min-height 215px // to make row's height identical
+
+	.promo-pic
+		background-image url(../../images/purpose_logos.png)
+		margin 0 auto
+
+		&.kasko
+			background-position 0 0
+
+		&.apartment
+			background-position 0 -100px
+
+		&.home
+			background-position 0 -200px
+
+		&.osago
+			background-position 0 -300px
+
+		&.travel
+			background-position 0 -400px
+
+		&.health
+			background-position 0 -500px
+
+		&.legal
+			background-image url(../../images/legal.svg)
+			background-position 0 0
+
+	@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
+		.promo-pic
+			background-image url(../../images/purpose_logos_2x.png)
+			background-size 100% auto

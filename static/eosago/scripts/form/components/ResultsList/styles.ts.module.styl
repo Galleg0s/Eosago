@@ -1,0 +1,18 @@
+@require '~react-ui-2018/style-constants/breakpoints.styl'
+
+.logoImg
+	width 100%
+	object-fit cover
+
+	@media (max-width: $breakpoints.md)
+		max-width 80px
+		max-height 32px
+
+.modalCenteredContent
+	position absolute
+	top 50%
+	left 50%
+	padding 0 10px
+	min-width 300px
+	transform translate(-50%, -50%)
+

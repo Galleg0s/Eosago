@@ -1,0 +1,186 @@
+@import '../colors.styl'
+
+body
+	background $light2
+	// переопределяем свойство 'min-width' для виджета
+	min-width 0
+
+	.bg-white
+		background $light2 !important
+
+#react-auto-form
+	> div > .ui-panel-gray
+		display none
+
+	.order-panel
+		padding 0
+
+		.ui-panel-white-shadow
+			padding 30px 40px 40px
+			box-shadow none
+
+			&.car--selected
+			.car
+				padding 30px 40px
+				background-color $dark3
+
+			.car
+				margin -30px -40px 30px
+
+			.car__prop
+				margin-right 15px
+
+			.car__prop-title
+				font-size 18px
+				color $white
+
+			.car__prop-delete
+				font-size 18px
+				color $white
+
+				.icon-close
+					opacity 0.5
+
+					&:hover
+						opacity 1
+
+			.car-select
+				.car-column-list
+					&::before
+						font-size 20px
+						line-height 30px
+						color $dark2
+
+					&-item
+						margin 0 0 10px
+
+						&:first-child
+							margin-top 10px
+
+	.ui-panel-gray
+		padding 30px 40px 40px
+		background-color $white
+
+		&__title
+			padding-bottom 30px
+			margin-bottom 30px
+			border-bottom 1px solid $light1
+			font-size 24px
+			line-height 36px
+			color $dark1
+
+		&__footer
+			padding 0 40px
+			background-color $white
+
+			.form-row
+				padding 40px 0
+				border-top 1px solid $light1
+
+				&--title
+					display none
+
+				&--field
+					width 100%
+
+					.submit-btn
+						float left
+						margin-top 0
+						margin-right 30px
+
+					.hints
+						clear both
+
+	.driver-panel
+		background-color $white
+
+		&--info
+			padding 0
+			margin 30px 40px 40px
+			background-color $white
+			box-shadow none
+
+			&:first-child
+				margin-top 0
+
+			.ui-columns
+			> div:nth-child(2)
+				margin 0
+				padding 30px
+				background-color $light2
+
+			.ui-columns
+				.ui-columns__column
+					width 100%
+
+					.driver-panel--field__title
+						width 45% !important
+
+				.ui-columns__column:last-child
+					.driver-panel--field:last-child
+						margin-bottom 0
+
+		&--header
+			padding 20px
+			margin-bottom 2px
+			font-size 24px
+			color $dark1
+			text-align center
+			border-bottom none
+			background-color $light2
+
+			& .icon-checkmark-circled
+				display none
+
+		&--field
+			margin-bottom 30px
+
+			&:last-child
+				margin-bottom 30px
+
+		&--add
+			width 100%
+			margin 0
+			text-align center
+
+			&__icon
+				margin-right 5px
+				opacity 0.2
+				transition opacity 0.2s ease
+
+			&:hover
+				.driver-panel--add__icon
+					opacity 0.5
+
+#react-result
+	.table-product
+		background $white
+
+		.table-flex__row--header
+			background $blue1
+
+			.table-flex__cell
+				color $white
+
+		&__options
+			margin 0
+			padding-left 140px
+			padding-right 20px
+			background $dark3
+			box-shadow inset 0 4px 2px 0 rgba(0, 0, 0, 0.3)
+
+			&::before
+				border none
+
+			&__list
+				color $white
+
+				&__el
+					&::after
+						color $white
+
+			.icon-close
+				color $white
+
+		&__options-arrow
+			display none

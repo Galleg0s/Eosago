@@ -1,0 +1,174 @@
+{% extends 'BankiruLayout2018Bundle:layouts:full.html.twig' %}
+{% import 'ui-2018/components.html.twig' as components %}
+
+{% set layoutIsWide = true %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ static_asset('/static/bundles/ui-2018/InsuranceBundle/eosago/styles/eosago-redesign.css') }}" rel="stylesheet" />
+{% endblock stylesheets %}
+
+{% block content %}
+	{% set breadcrumbs = [
+		['Страхование', path('bankiru_insurance')],
+		['Калькулятор ОСАГО']
+	] %}
+
+	<article>
+		<section class="layout-wrapper padding-top-{% if isMobileDevice() %}default{% else %}medium{% endif %}
+		margin-bottom-2xl">
+			{% if not isMobileDevice() %}
+				{{ components.breadcrumbs(breadcrumbs) }}
+			{% endif %}
+
+			<h1 class="padding-bottom-{% if isMobileDevice() %}default text-align-center{% else %}x-small{% endif %}
+				text-size-1 text-weight-bold">
+				{{ seoInfo.meta.title_h1 }}
+			</h1>
+
+			{% if not isMobileDevice() %}
+				<p class="insurance__subtitle margin-bottom-default text-size-6 color-minor-black-lighten">
+					Все виды автострахования - полисы страхования ОСАГО
+				</p>
+			{% endif %}
+
+			<div
+				id="react-root"
+				data-module="{{ static_asset('/static/bundles/ui-2018/InsuranceBundle/eosago/scripts/home-page.js') }}"
+			>
+				<div class="ui-loading-overlay-big ui-loading-hidden-content"></div>
+			</div>
+		</section>
+
+		{# Блок "Преимущества" #}
+		<section class="layout-wrapper margin-bottom-2xl">
+			{% set advantages = [
+				{
+					header: 'Минимум времени',
+					text: 'Доступно оформление полиса е-ОСАГО с доставкой на e-mail',
+					img: '/static/bundles/ui-2018/InsuranceBundle/eosago/images/home/letter_icon.svg',
+				},
+				{
+					header: 'Гарантия подлинности',
+					text: 'Мы работаем только с проверенными партнерами',
+					img: '/static/bundles/ui-2018/InsuranceBundle/eosago/images/home/shield_icon.svg',
+				},
+				{
+					header: 'Только лучшие предложения',
+					text: 'Сравнение стоимости в лучших страховых компаниях',
+					img: '/static/bundles/ui-2018/InsuranceBundle/eosago/images/home/like_icon.svg',
+				}
+			] %}
+
+			{% if not isMobileDevice() %}
+				<div class="flexbox flexbox--row flexbox--justify-content_space-between shadow-level-8 border-radius-default">
+					{% for advantage in advantages %}
+						<div class="flexbox__item text-align-center padding-default">
+							<img src="{{ static_asset(advantage.img) }}" alt="{{ advantage.header }}"
+								 class="padding-bottom-small">
+							<p class="text-size-4 text-weight-bolder">{{ advantage.header }}</p>
+							<p class="margin-top-x-small text-size-5">{{ advantage.text }}</p>
+						</div>
+					{% endfor %}
+				</div>
+			{% else %}
+				<div
+					class="flexbox flexbox--justify-content_center flexbox--align-items_center shadow-level-8
+					border-radius-default padding-default text-align-center"
+					data-module="{{static_asset('/static/bundles/ui-2018/InvestmentMasterBundle/mobile-steps/mobile-steps.js') }}"
+					data-module-options='{{ advantages|json_encode|raw }}'>
+					<div class="ui-loader-icon margin-bottom-large"></div>
+				</div>
+			{% endif %}
+		</section>
+
+		{# Блок "Шаги" #}
+		<section class="layout-wrapper margin-bottom-2xl">
+			{% set steps = [
+				{'text': 'Выберите лучшее предложение'},
+				{'text': 'Оплатите полис картой'},
+				{'text': 'Получите полис на e-mail'}
+			] %}
+
+			<h2 class="text-size-2 text-weight-bold margin-bottom-large text-align-center">Как купить полис</h2>
+			{% if not isMobileDevice() %}
+				<div
+					class="padding-hor-2xl flexbox flexbox--row flexbox--wrap flexbox--justify-content_space-between
+					flexbox--align-items_center">
+					{% for step in steps %}
+						<div class="flexbox flexbox--align-items_center">
+							<span class="text-size-0 text-weight-bolder padding-right-medium">{{ loop.index }} </span>
+							<p>{{ step.text }}</p>
+						</div>
+						{% if not loop.last %}<i class="icon-font icon-right-24 color-major-dark-blue text-size-3"></i>{% endif %}
+					{% endfor %}
+				</div>
+			{% else %}
+				<ul>
+					{% for step in steps %}
+						<li class="flexbox flexbox--align-items_center {% if not loop.last %}margin-bottom-default{%
+							endif %}">
+							<span class="text-size-0 text-weight-bolder padding-right-medium">{{ loop.index }} </span>
+							<p class="text-size-5">{{ step.text }}</p>
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</section>
+
+		<div class="bg-minor-black-lighten2">
+			<section class="padding-top-2xl padding-bottom-2xl">
+				{# Блок "Отзывы о страховании" #}
+				{{ render(controller('ProductsBundle:Widget:insuranceFeedback', {
+					'title': 'Отзывы об ОСАГО',
+					'productType': 'osago'
+				})) }}
+			</section>
+
+			{# Блок "Партнеры" #}
+			<section class="padding-bottom-2xl">
+				<section class="bg-minor-black-lighten2 text-align-center">
+					<h2 class="text-size-2 text-align-center text-weight-bold padding-bottom-large">
+						Партнеры сервиса
+					</h2>
+
+					<div class="{% if not isMobileDevice() %}layout-wrapper{% endif %}"
+						 data-module="{{ static_asset('/static/bundles/ui-2018/InsuranceBundle/eosago/scripts/partners.js') }}"
+					></div>
+				</section>
+			</section>
+
+			{# Блок "Сео-аккордеон" #}
+			<section class="layout-wrapper">
+				{% set accordion_data = [] %}
+				{% if seoInfo.meta.seo_link_title|default %}
+					{% set accordion_data = accordion_data|merge([{
+						'header': seoInfo.meta.seo_link_title,
+						'body': include('@BankiruInsurance/Auto/EOsago/accordionSeoLinks.html.twig',  {links: seoInfo.meta.seo_links})
+					}]) %}
+				{% endif %}
+
+				{% for seoLinkBlock in seoLinkBlocks %}
+					{% set accordion_data = accordion_data|merge([{
+						'header': seoLinkBlock.title,
+						'body': include('@BankiruInsurance/Auto/EOsago/accordionSeoLinks.html.twig', {links:
+							seoLinkBlock.links}),
+						'expanded': loop.last == true,
+					}]) %}
+				{% endfor %}
+
+				{% include 'BankiruMainBundle:Partials:common_accordion_block.html.twig' with
+					{ 'data': accordion_data,
+						'useSeoCssClass': true,
+						'useSmallCssClass': isMobileDevice(),
+						'options': {'isSeo': true}
+					}
+				%}
+			</section>
+		</div>
+	</article>
+
+	{% if app.debug == false %}
+		<script src="{{ static_asset('/static/bundles/ui-2018/react-redux.js') }}"></script>
+	{% endif %}
+{% endblock %}

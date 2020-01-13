@@ -1,0 +1,765 @@
+// Форма ввода
+#react-auto-form
+	position relative
+	font-size $fontSizeMedium
+
+	// Иконки
+	.icon-hover
+		opacity 0.6
+		transition opacity 0.2s ease
+
+		&:hover
+			opacity 1
+
+	// Алфавитный список марок машин
+	.car-column-list
+		list-style none
+		margin 0 0 $marginDefault
+		padding 0
+		overflow hidden
+
+		&::before
+			content attr(data-letter)
+			textHeadline4()
+
+	// Поля ввода
+	.form-input-field.focused
+		border-color #246f91
+		outline 0
+
+
+// Скрытие слайдера в мобильной версии
+@media (max-width: $breakpoints['sm'])
+	#react-auto-form
+		.ui-slider-input
+			.slider-wrap
+			.slider-range
+				display none
+
+// Блок с шагами
+@media (max-width: $breakpoints['md'])
+	#auto-explanation-widget
+		.icon-rotate-90
+			transform rotate(90deg)
+
+// Результаты
+#react-result
+	// Группа предложений
+	.product-group
+		margin-bottom -1px
+		transition background-color 0.5s ease
+		&--disabled
+			&::after
+				content ' '
+				position absolute
+				display block
+				top 0
+				left 0
+				width 100%
+				height 100%
+				opacity 0.5
+				background-color white
+
+	.product-group:not(.active):hover,
+	.product-group:not(.active):hover .product-options__arrow
+		background-color #fafafa
+
+	.product-group--tagged
+		padding-top $marginXXSmall
+
+	.bg-sponsor
+		background-color #e5f8d6
+
+	.insurance-company-logo
+		width 100px
+
+	// Предложение
+	.product
+		position relative
+
+	.product ~ .product
+		border-top 1px solid $colorBgGray
+
+	.product .grid__row
+		flex-grow 1
+
+	// Синяя плашка "Премиальная компания"
+	.company-tag
+		position absolute
+		top 0
+		left 0
+		margin 0
+		max-width 0
+		background-color #00bff3
+		z-index 10
+		transition max-width 0.5s ease
+
+	.company-tag::after
+		content ''
+		position absolute
+		top 0
+		left 100%
+		width 0
+		height 0
+		border-top 24px solid #00bff3
+		border-right 24px solid transparent
+
+	.product-group:hover .company-tag
+		animation-name premiumAnimation
+		animation-duration 1s
+		animation-timing-function linear
+		animation-fill-mode both
+		max-width 200px
+
+	.company-tag__text
+		display inline-block
+		box-sizing border-box
+		padding 0 10px
+		overflow hidden
+		font-size 12px
+		line-height 2
+		vertical-align middle
+		font-weight 600
+		text-transform uppercase
+		text-shadow 1px 1px 2px rgba(0, 0, 0, 0.2)
+		white-space nowrap
+		color #fff
+		opacity 0
+		transition opacity 0.5s ease
+
+	.product-group:hover .company-tag__text
+		opacity 1
+
+	// Иконки предложения
+	.lead-options img
+		max-width 25px
+		max-height 25px
+		outline 0
+
+	// Свойства
+	.product-options
+		border-top 1px solid #bdc3c7
+		opacity 0
+		visibility hidden
+		transition opacity 0.2s 0s ease
+
+	.product-options-dropdown
+		overflow visible !important
+
+	.product-options--active
+		opacity 1
+		visibility visible
+		transition-delay 0.3s
+
+	.product-options__close
+		position absolute
+		top 0
+		right 0
+		padding $marginDefault
+		cursor pointer
+		color #95a5a6
+		opacity 0.5
+		transition opacity 0.2s ease
+
+	.product-options__close:hover
+		opacity 1
+
+	.is-checked-all .product-options__close
+		display none
+
+	.product-options__arrow
+		position absolute
+		top -9px
+		left 29%
+		width 15px
+		height 15px
+		background-color #fff
+		border-top 1px solid #bdc3c7
+		border-left 1px solid #bdc3c7
+		transform translateX(-50%) rotate(45deg)
+		z-index 1
+
+	.product-table--kasko:not(.product-table--osago) .product-options__arrow
+		left 34%
+
+	// окно закрытой выдачи
+	.auto-phone
+		max-width 860px
+		margin 0 auto $marginDefault
+
+		&__text
+			max-width 620px
+			margin auto
+
+		&__container
+			background-color $colorLightBeige
+			border 3px solid $colorLightBeige
+
+		&__main
+			background-color #fff
+
+		&__steps
+			margin-top 3px
+			padding $marginLarge $marginDefault $marginLarge 0
+			background-color #fff
+			list-style-type none
+
+	// форма закрытой выдачи
+	.auto-form
+		max-width 400px
+		margin auto
+
+@media (max-width: $breakpoints['md'])
+	#react-result
+		.product-group
+			margin-bottom $marginLarge
+
+			&:last-child
+				margin-bottom 0
+
+		.product-group--tagged
+			padding-top $marginMedium
+
+		.company-tag
+			max-width initial
+			width 100%
+			text-align center
+
+		.product-group:hover .company-tag
+			max-width initial
+
+		.company-tag::after
+			display none
+
+		.company-tag__text
+			textDefault()
+			padding 5px
+			opacity 1
+
+		.product__company
+			textHeadline4()
+
+		.product__name
+			textDefault()
+
+		.product__field
+			textMedium()
+
+		.product__value
+			textHeadline4()
+
+		.product-options__arrow
+			left 35%
+
+		.product-table--kasko:not(.product-table--osago) .product-options__arrow
+			left 43%
+
+@media (max-width: $breakpoints['sm'])
+	#react-result
+		.product ~ .product
+			border-top 0
+
+		.product__title
+			flex-grow 1
+			background-color $colorBgGray
+			padding $marginXSmall
+			margin-top -($marginDefault)
+			margin-bottom -($marginXSmall)
+			margin-left -($marginXSmall)
+			margin-right -($marginXSmall)
+
+		.product-table .product-group .product-options .product-options__arrow
+			left 50%
+
+$formFontSize = $fontSizeMedium
+
+#react-widget-car
+	position relative
+	font-size $formFontSize
+
+	.form-input-field
+		font-size $formFontSize
+
+		&.focused
+			border-color #246f91
+			outline 0
+
+#react-auto-tips
+	.tip-item
+		margin-left -($marginXSmall)
+		margin-right -($marginXSmall)
+		padding-left $marginXSmall
+		padding-right $marginXSmall
+
+		.tip-item__image
+			transition transform 0.2s ease
+
+		&:hover
+		&.active
+			.tip-item__image
+				transform translateY(-5px)
+
+			.tip-item__title
+				color $colorLink
+
+#react-widget-progress
+	.tip-list
+		width 300px
+		height 100px
+		position relative
+
+		.tip-item
+			width 300px
+			display table
+			position absolute
+			visibility hidden
+			opacity 0
+			transition visibility 0.3s ease, opacity 0.3s ease
+
+			.tip-item__image
+				width 100px
+				height 100px
+				margin-right 20px
+				display table-cell
+
+			.tip-item__title
+				width 180px
+				height 100px
+				display table-cell
+				vertical-align middle
+
+			&.active
+				visibility visible
+				opacity 1
+
+#auto-explanation-widget
+	.explanation-widget
+		.icon-right-24
+			position relative
+			top 88px
+			opacity 0.3
+
+
+.region-popover
+	width 100%
+	height 100%
+	position absolute
+	top 0
+	background-color rgba(255, 255, 255, 0.6)
+
+	&__container
+		width 360px
+		position relative
+		top 150px
+		padding $marginDefault
+		margin auto
+		background-color #fff
+		box-shadow 0 15px 40px rgba(0, 0, 0, 0.3)
+
+	&__title
+		margin-bottom $marginDefault
+		font-size $fontSizeLarge
+		font-weight bold
+		line-height (20px/$fontSizeLarge)em
+		text-align center
+
+	&__buttons
+		text-align center
+
+.icon-tooltip
+	opacity 0.2
+	cursor pointer
+	transition opacity 0.2s ease
+
+	&:hover
+		opacity 0.5
+
+.order-panel
+	padding 3px
+
+	.ui-panel-white-shadow
+		padding $marginDefault 17px
+
+// .order-type
+// 	padding 7px 0
+//
+// 	&__item
+// 		display inline-block
+// 		margin-right 30px
+//
+// 		&--title
+// 			font-weight bold
+// 			font-size $fontSizeMedium
+// 			text-transform uppercase
+//
+// 		&--tooltip
+// 			margin-left 5px
+//
+// 			.icon-font
+// 				@extends .icon-tooltip
+
+.form-row
+	font-size 0 // remove white space
+	margin-bottom $marginDefault
+
+	&:last-child
+		margin-bottom 0
+
+	&--title
+		display inline-block
+		font-size $formFontSize
+		font-weight bold
+		vertical-align top
+		box-sizing border-box
+
+		&__tooltip
+			margin-left $marginXXSmall
+
+			.icon-question
+				@extends .icon-tooltip
+
+	&--field
+		display inline-block
+		font-size $formFontSize
+
+		&__group-item
+			margin-left 10px
+
+			&:first-child
+				margin-left 0
+
+		&.field-large
+			width 265px
+
+		.field--85-percent
+			width 85%
+
+		&.field--170-width
+		.field--170-width
+			width 170px
+
+		.field--105-width
+			width 105px
+
+		.field-radio
+			label
+				display block
+				padding 8px 0
+
+		.field-info
+			width 75%
+			padding 12px 0 0
+
+		.ui-select__toggler
+			font-size $formFontSize
+
+		.submit-btn
+			margin-top $marginDefault
+
+		.loading-message
+			margin-top $marginDefault
+			font-weight bold
+			color $colorOrange
+
+			.loading-message__dot
+				color $colorOrange
+				opacity 0.2
+				animation-name dotAnimationBlink
+				animation-duration 1.5s
+				animation-timing-function linear
+				animation-iteration-count infinite
+				animation-fill-mode both
+
+				&[data-count="1"]
+					animation-delay 0s
+
+				&[data-count="2"]
+					animation-delay 0.2s
+
+				&[data-count="3"]
+					animation-delay 0.4s
+
+		.slider-range
+			font-size $fontSizeSmall
+
+	&--measurement
+		display inline-block
+		font-size $formFontSize
+		margin 8px 0 0 10px
+		vertical-align top
+
+		&-big
+			font-size $fontSizeLarge
+
+	.error-message
+		font-size $fontSizeDefault
+		color $colorError
+		padding-top 5px
+
+
+.driver-panel
+	background-color $colorBgGray
+	padding-bottom $marginDefault
+
+	&--info
+		background-color white
+		padding $marginDefault 17px
+		margin 20px 3px 0
+		box-shadow(0px, 1px, 2px, 0, rgba(0, 0, 0, 0.18))
+
+		&:first-child
+			margin-top 0
+
+	&--header
+		fontSizeLarge()
+		font-weight bold
+		padding-bottom $marginDefault
+		margin-bottom $marginDefault
+		border-bottom 1px dotted $colorBorderDark
+
+		.icon-checkmark-circled
+			color $colorGreen
+			vertical-align 0
+			margin-right 5px
+
+		.icon-close
+			float right
+			margin-top 7px
+			color $colorCoral
+			cursor pointer
+			opacity 0.7
+			transition opacity 0.2s ease
+
+			&:hover
+				opacity 1
+
+	&--add
+		display inline-block
+		margin 20px 0 0 $marginDefault
+
+		&__icon
+			margin-right 5px
+			opacity 0.2
+			transition opacity 0.2s ease
+
+		&:hover
+			.driver-panel--add__icon
+				opacity 0.5
+
+	&--field
+		margin-bottom $marginDefault
+
+		&:last-child
+			margin-bottom 0
+
+		&__title
+			display inline-block
+			font-weight bold
+			padding 9px 10px 0 0
+
+		.field--105-width
+			display inline-block
+			width 105px
+			vertical-align top
+
+		.form-input-field
+			vertical-align top
+
+	.ui-columns--colcount_3
+		.ui-columns__column:first-child
+			.driver-panel--field__title
+				width 30%
+
+		.ui-columns__column:nth-child(2)
+			.driver-panel--field__title
+				width 45%
+
+		.ui-columns__column:last-child
+			.driver-panel--field__title
+				width 45%
+
+.result
+	.accident-free-apply
+		padding-top 5px
+
+		.icon-attention-16
+			color $colorOrangeHover
+			margin-right $marginXXSmall
+
+	.lead-row
+		height 3em
+		padding-bottom $marginXSmall
+
+		&:last-child
+			padding-bottom 0
+
+	.table-flex__row
+		&.header
+			.table-flex__cell
+				&.kasko
+					padding-right $marginXXSmall
+					padding-left $marginXXSmall
+
+			.on-fixed
+				padding $marginXSmall $marginDefault
+				visibility hidden
+				opacity 0
+
+			&.table-header-fixed
+				.on-fixed
+					visibility visible
+					opacity 1
+
+				.icon-tooltip
+					visibility hidden
+
+	.table-flex__row-group
+		.kasko
+			padding-right $marginXXSmall
+			padding-left $marginXXSmall
+
+		.company
+			margin-left 120px
+			min-width 250px
+			min-height 63px
+
+			&__premium
+				position absolute
+				top 0
+				left -140px
+				height 24px
+				margin 0
+				max-width 0
+				background-color $colorBrightSkyBlue
+				z-index 10
+				transition max-width 0.5s ease
+
+				&--text
+					display inline-block
+					box-sizing border-box
+					overflow hidden
+					padding 0 10px
+					font-size $fontSizeSmall
+					line-height 2
+					vertical-align middle
+					font-weight 600
+					text-transform uppercase
+					text-shadow 1px 1px 2px rgba(0, 0, 0, 0.2)
+					white-space nowrap
+					color white
+					opacity 0
+					transition opacity 0.5s ease
+
+				&:after
+					content ''
+					position absolute
+					top 0
+					left 100%
+					width 0
+					height 0
+					border-top 24px solid $colorBrightSkyBlue
+					border-right 24px solid transparent
+
+			&__logo
+				width 100px
+				position absolute
+				top 24px
+				left (-100 - $marginDefault)px
+
+				img
+					width 100px
+
+		&:hover
+			.company__premium
+				animation-name premiumAnimation
+				animation-duration 1s
+				animation-timing-function linear
+				animation-fill-mode both
+				max-width 200px
+
+				&--text
+					opacity 1
+
+		.close
+			float right
+			margin-left auto
+			padding 24px 0 $marginXSmall
+			cursor pointer
+			color $colorGrayBlue
+			opacity 0.5
+			transition opacity 0.2s ease
+
+			&:hover
+				opacity 1
+
+		.company-name
+			margin-top $marginXXSmall
+
+		.franchise
+			margin-top 3px
+
+		.link-with-icon .icon-font
+			margin-right 0.2em
+
+	.compare
+		min-width 200px
+		max-width 200px
+
+		.button--bordered-blue
+			margin-right $marginXSmall
+
+.special-offer
+	width 28px
+	height 18px
+	display block
+	position absolute
+	top 6px
+	left -28px
+	transition box-shadow 0.2s ease
+
+	&:hover
+		shadowLevel5()
+
+	&__icon
+		width 28px
+		height 18px
+		display block
+		background transparent url(./../../images/discount.png) center center no-repeat
+
+.lead-option__list
+	float right
+
+	.lead-option__item
+		width 25px
+		height 25px
+		padding-left 7px
+		float left
+
+.compare-btn
+	position absolute
+	right 0
+	bottom 0
+
+	.button--bordered-blue
+		margin-right $marginXSmall
+
+input.error
+input.error:focus
+	border 1px solid $colorError
+	color $colorError
+
+@keyframes dotAnimationBlink
+	0%
+		opacity 0.2
+
+	20%
+		opacity 1
+
+	100%
+		opacity 0.2
+
+@keyframes premiumAnimation
+	0%
+		opacity 0.8
+	100%
+		opacity 1

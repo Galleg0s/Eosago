@@ -1,0 +1,50 @@
+.ins-slider
+	overflow hidden
+
+	&__container
+		width 100%
+		height 392px
+		position relative
+
+		.ui-slider-arrow
+			&--left
+				left 15%
+
+			&--right
+				right 15%
+
+	&__list
+		width 100%
+		position absolute
+		left 0
+		transition left 0.3s ease
+
+	&__item
+		width 700px
+		height 392px
+		display block
+		float left
+		position relative
+		overflow hidden
+		transform scale(0.7)
+		transition transform 0.3s ease
+		shadowLevel5()
+
+		&::after
+			content ' '
+			width 100%
+			height 100%
+			display block
+			position absolute
+			top 0
+			background-color rgba(0, 0, 0, 0.3)
+			visibility visible
+			opacity 1
+			transition visibility 0s, opacity 0.3s ease
+
+		&.active
+			transform scale(1)
+
+			&::after
+				visibility hidden
+				opacity 0

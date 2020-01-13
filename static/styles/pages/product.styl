@@ -1,0 +1,404 @@
+.product-auto-data
+	border-color $colorBeige
+	border-width 3px 3px 0
+	border-style solid
+	padding 9px 14px $marginXSmall
+	display none
+
+	&__price
+		font-size 40px
+		line-height 46px
+		margin-right $marginXSmall
+
+	&__franchise
+		display none
+		color $colorGrayBurn
+		font-size $fontSizeLarge
+
+	&__link
+		float right
+		line-height 46px
+
+.product-compare-controls
+	&__remove
+	&__link
+		display none
+
+		.in-compare &
+			display block
+
+	.in-compare &__add
+		display none
+
+	&__add
+	&__remove
+		margin-top -($marginXXSmall)
+
+	&__link
+	&__rating
+		margin -($marginXSmall) $marginXSmall 0 0
+
+	&__rating
+		margin-right 30px
+
+		.rating
+			font-size $fontSizeLarge
+			font-weight bold
+
+			for rating, i in #e74c3c #e74c3c #f26c63 #ffae26 #7dcea0 #7dcea0 $colorGreen $colorGreen $colorGreen $colorGreen $colorGreen
+				&.rating-color-{ i }
+					color rating
+
+.products-list
+	.ui-columns__column:last-child
+		float left
+
+	&--title
+		max-width 700px
+		margin 0 auto
+
+	&--switcher
+		margin-top 30px
+
+	&--items
+		display flex
+		flex-flow wrap
+
+	&--image
+		width 100%
+
+	&--btn
+		margin-top 40px
+
+.product-hidden
+	display none
+
+.table-wrap
+	position relative
+	overflow hidden
+	margin -35px -20px
+	padding 35px $marginDefault
+
+.toggle-content-left
+	width 140px
+
+.toggle-handler
+	border 1px solid $colorBgDarkGray
+	border-bottom 0
+	border-radius 4px 4px 0 0
+	padding 0 5px
+	cursor pointer
+	display inline-block
+	z-index 10
+	position relative
+
+	&.expanded
+		border-color $white2Gray
+		background-color $white2Gray
+
+	.toggle-handler-text
+		color $colorLink
+		border 0
+		letter-spacing 0
+		font-size 12px
+
+
+.compare-table
+	display flex
+	flex 1
+
+	.row
+		display flex
+		flex-direction column
+		flex 0 0 20%
+		transition box-shadow 0.2s ease, margin-left 1s ease
+
+		[data-product-count="1"]&:not(:first-child)
+			flex 0 0 80%
+
+		[data-product-count="2"]&:not(:first-child)
+			flex 0 0 40%
+
+		[data-product-count="3"]&:not(:first-child)
+			flex 0 0 26.666666%
+
+		&.prev
+			margin-left -20%
+			z-index -1
+
+			[data-product-count="1"]&
+				margin-left -80%
+
+			[data-product-count="2"]&
+				margin-left -40%
+
+			[data-product-count="3"]&
+				margin-left -26.6666666%
+
+			.animated&
+				z-index 0
+
+		&:last-child:not(:first-child)
+			.cell.title
+				border-right-color $colorBgGray
+
+			.cell.btn
+				border-right-color transparent
+
+		[data-table]&:hover
+		[data-table]&.hovered
+			box-shadow 0 15px 15px 10px rgba(0, 0, 0, 0.15), inset 0 -1px 0 0 $colorLightBeige //  fix for shadow bottom 1px
+			z-index 10
+
+			.cell.title
+				.delete-btn
+					display block
+					opacity 1
+
+		&:first-child
+			background-color white
+
+			.animated&
+				z-index 12
+
+			.group-header
+				border-bottom-color $colorBgGray
+
+			&:hover
+				box-shadow none
+
+		.cell
+			padding $marginDefault
+			border-width 1px
+			border-style solid
+			border-color transparent $colorBgGray $colorBgGray transparent
+
+			&:last-child
+				border-bottom-color transparent
+
+			.show-difference&[data-same]
+			.show-difference& [data-same]
+				display none
+
+			&.header
+				font-size $fontSizeMedium
+				font-weight bold
+				padding-left 0
+				border-bottom-color transparent
+				background-color #fff
+
+				&:first-child
+					padding-top 0
+					padding-bottom 2 * $marginDefault
+
+			&.group-header
+				font-size $fontSizeLarge
+				padding 0 $marginDefault $marginSmall 0
+				margin-top -1px
+				border-top-color white
+				border-bottom-color $colorBorderDark
+
+			&.title
+				position relative
+				background-color $colorBgGray
+				border-right-color darken($colorBgGray, 10%)
+				text-align center
+
+				.title-wrap
+					margin auto
+
+				.logo
+					width 100px
+					background-color white
+					margin 0 auto $marginXSmall
+
+					img
+						width 100px
+
+				.delete-btn
+					display none
+					position absolute
+					top -24px
+					left 0
+					width 100%
+					height 9px
+					background-color $colorBgGray
+					color $colorError
+					padding-top $marginSmall
+					opacity 0
+					transition opacity 0.2s ease
+
+					.icon-font
+						cursor pointer
+
+			.price
+				font-size 32px
+				font-weight bold
+
+			.price:not([data-default])
+			.franchise
+				display none
+
+			&[data-price-available]
+				& [data-default]
+					display none
+
+				.price:not([data-default])
+					display block
+
+				&[data-franchise-available]
+					.franchise
+						display block
+
+			.rating
+				width 60px
+				height 60px
+				margin auto
+
+			&.btn
+				border-top-color transparent
+				border-right-color rgba(0, 0, 0, 0.07)
+				border-bottom-color $colorLightBeige
+
+	[data-table].animated&
+		overflow hidden
+
+	&::after
+		content ''
+		display flex
+		position absolute
+		top 0
+		bottom 0
+		right 0
+		min-width 100px
+		background linear-gradient(to left, white, white, rgba(255, 255, 255, 0))
+		z-index 13
+
+		[data-product-count="1"]&
+		[data-product-count="2"]&
+		[data-product-count="3"]&
+		[data-product-count="4"]&
+			display none
+
+		.no-fade.animated&
+			visibility visible
+			animation decreaseOpacity 0.2s ease 0.8s
+
+		.no-fade&
+			visibility hidden
+
+	.table-header-fixed&
+		display none
+		position fixed
+		top 0
+		padding-left 20px
+		margin-left -20px
+		z-index 12
+		shadowLevel2()
+
+		.row
+			flex-direction row
+			flex 0 0 100%
+			overflow hidden
+
+			.cell
+				display flex
+				flex 1 0
+				flex-basis calc(20% - 42px)
+				align-items center
+				transition margin-left 1s ease
+
+				[data-product-count="1"]&:not(:first-child)
+					flex-basis calc(80% - 42px)
+
+				[data-product-count="2"]&:not(:first-child)
+					flex-basis calc(40% - 42px)
+
+				[data-product-count="3"]&:not(:first-child)
+					flex-basis calc(26.66666% - 42px)
+
+				&:first-child
+					flex-basis calc(20% - 22px)
+					z-index 13
+
+				&:last-child
+					border-right-color $colorBgGray
+
+				&.prev
+					margin-left -20%
+					transition margin-left 1s ease
+
+					[data-product-count="1"]&
+						margin-left -80%
+
+					[data-product-count="2"]&
+						margin-left -40%
+
+					[data-product-count="3"]&
+						margin-left -26.6666666%
+
+				.delete-btn
+					display block
+					position relative
+					top 0
+					height auto
+					padding 5px 0
+					opacity 0
+
+					.icon-font
+						top 0
+
+				&:hover
+				&.hovered
+					.delete-btn
+						opacity 1
+
+			.no-fade&::after
+				content ''
+				position absolute
+				top 0
+				bottom 0
+				right -20px
+				width 21px
+				background-color $colorBgGray
+				shadowLevel3()
+
+		.delete-btn
+			position static
+			height auto
+			padding 0
+
+			.icon-font
+				position relative
+				top -15px
+
+.compare-controls
+	.scroll-btn
+		cursor pointer
+
+		&:first-child
+			margin-right $marginXSmall
+
+		&[data-disabled]
+			opacity 0.3
+			cursor default
+
+	&.fixed
+		position fixed
+		top 10px
+		z-index 14
+
+	&[data-product-count="1"]
+	&[data-product-count="2"]
+	&[data-product-count="3"]
+	&[data-product-count="4"]
+		display none
+
+@keyframes decreaseOpacity
+	0%
+		opacity 1
+		visibility visible
+
+	100%
+		opacity 0
+		visibility visible

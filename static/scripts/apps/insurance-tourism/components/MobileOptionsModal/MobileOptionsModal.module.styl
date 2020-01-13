@@ -1,0 +1,26 @@
+@import '~react-ui-2018/style-constants/colors.styl'
+@import '~react-ui-2018/style-constants/indents.styl'
+@import '~react-ui-2018/style-constants/z-index.styl'
+
+$border = solid 1px $colorMinorGrayLighten
+
+.wrapper
+	position relative
+	z-index 1
+	border-top $border
+
+	&:last-child
+		border-bottom $border
+
+.category
+	padding $indentS
+
+.stickyCategory
+	position fixed
+	top 56px
+	width 100%
+	z-index $popupZIndex
+
+.options
+	position relative
+	padding-top 70px

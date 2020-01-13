@@ -1,0 +1,56 @@
+@import '~react-ui-2018/style-constants/colors.styl'
+@import '~react-ui-2018/style-constants/shadows.styl'
+@import '~react-ui-2018/style-constants/indents.styl'
+@import '~react-ui-2018/style-constants/text.styl'
+
+.root
+	&_expanded,
+	&:hover
+		.options
+			color $colorMajorBlue
+
+.showSuggestionsBtn
+	position absolute
+	bottom -26px
+
+.logo
+	width 100px
+	height 64px
+
+	img
+		display block
+		width 100%
+
+	&_mobile
+		width 70px
+		height 44px
+
+.price
+	font-weight 600
+
+.packageName
+	font-weight 500
+	line-height 32px
+
+.options
+	white-space nowrap
+
+.optionsIcon
+	color $colorMinorGrayLighten
+
+	&:hover
+		color $colorSilverMedium
+
+.badge
+	display inline-block
+	border-radius 8px
+	font-weight 700
+	background-color $colorMajorGreen
+	color $colorMajorWhite
+	textSize7()
+	textWeightBold()
+	padding-left $indentXS
+	padding-right $indentXS
+
+	&_discount
+		background-color $colorMajorBlue

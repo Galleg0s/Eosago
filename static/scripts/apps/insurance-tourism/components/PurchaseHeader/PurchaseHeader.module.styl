@@ -1,0 +1,24 @@
+@import '~react-ui-2018/style-constants/colors.styl'
+
+.root
+	position relative
+
+	// TODO: Временное решение. Реализовать нужный функционал в компоненте TableList
+	:global(.table-list__key)
+		width 32%
+	:global(.table-list__value)
+		width 68%
+	:global(.table-list--size_small .table-list__key),
+	:global(.table-list--size_small .table-list__key)
+		width 50%
+
+.optionsIcon
+	color $colorMinorGrayLighten
+
+	&:hover
+		color $colorSilverMedium
+
+.bg
+	position absolute
+	width 100%
+	height 232px

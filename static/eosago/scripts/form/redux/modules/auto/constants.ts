@@ -1,0 +1,21 @@
+export const GET_AUTO_ID_REQUEST = 'ins/eosago/GET_AUTO_ID_REQUEST';
+export type GET_AUTO_ID_REQUEST = typeof GET_AUTO_ID_REQUEST;
+
+export const GET_AUTO_ID_SUCCESS = 'ins/eosago/GET_AUTO_ID_SUCCESS';
+export type GET_AUTO_ID_SUCCESS = typeof GET_AUTO_ID_SUCCESS;
+
+export const GET_AUTO_ID_FAILURE = 'ins/eosago/GET_AUTO_ID_FAILURE';
+export type GET_AUTO_ID_FAILURE = typeof GET_AUTO_ID_FAILURE;
+
+export const GET_AUTO_DATA_REQUEST = 'ins/eosago/GET_AUTO_DATA_REQUEST';
+export type GET_AUTO_DATA_REQUEST = typeof GET_AUTO_DATA_REQUEST;
+
+export const GET_AUTO_DATA_SUCCESS = 'ins/eosago/GET_AUTO_DATA_SUCCESS';
+export type GET_AUTO_DATA_SUCCESS = typeof GET_AUTO_DATA_SUCCESS;
+
+export const GET_AUTO_DATA_FAILURE = 'ins/eosago/GET_AUTO_DATA_FAILURE';
+export type GET_AUTO_DATA_FAILURE = typeof GET_AUTO_DATA_FAILURE;
+
+
+export const GET_AUTO_DATA_DELAY = 2;
+export const GET_AUTO_DATA_LIMIT = 30 / GET_AUTO_DATA_DELAY;

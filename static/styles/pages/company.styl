@@ -1,0 +1,53 @@
+.ins-company-deals
+	&__item
+		display block
+		position relative
+		padding 0 0 $marginSmall
+		background $colorLightBeige
+		color $colorText
+		border 3px solid $colorBeigeBorder
+		transition border-color 0.2s ease-in-out
+		box-sizing border-box
+
+		&:hover
+			border-color #ffb307
+			text-decoration none
+
+		&--logo
+			height 100px
+			background #ffffff
+			margin 0 auto
+			padding 9px 0
+			text-align center
+			white-space nowrap
+			font-size 0
+
+			img
+				display inline-block
+				vertical-align middle
+				max-width 100px
+				max-height 100px
+
+			&::before
+				content ''
+				display inline-block
+				height 100%
+				vertical-align middle
+
+		&--desc
+			padding 0 $marginSmall
+			text-align center
+
+		&--title
+			margin $marginDefault 0
+
+	.scroller__holder
+		width auto
+		font-size 0
+		margin-left -($marginDefault)
+		text-align left !important
+
+	.scroller__item
+		width 33.333333333%
+		padding 0 0 0 $marginDefault !important
+		margin 0 !important

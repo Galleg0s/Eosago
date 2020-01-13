@@ -1,0 +1,41 @@
+@require '~ui-2013/guideline.styl'
+
+.tabs
+	$baseCls = 'tabs'
+	display flex
+	background white
+
+	&__item
+		flex-grow 1
+		padding $marginDefault 25px $marginXSmall
+		font-family $fontFamilyDefault
+		font-size 20px
+		line-height 26px
+		color rgba(34, 34, 34, 0.3)
+		cursor pointer
+		text-align center
+		border-bottom 1px solid $colorBorderDark
+
+		&--active
+			color $colorAzureBlue
+
+		&--success
+			color $colorGreen
+			border-bottom 1px solid $colorGreen
+
+	&--mobile
+		display block
+		overflow auto
+		white-space nowrap
+
+		&::-webkit-scrollbar
+			display none
+
+		& .{$baseCls}__item
+			display inline-block
+			padding $marginDefault $marginSmall $marginXSmall
+			font-size 16px
+			line-height 22px
+			font-weight bold
+			text-transform uppercase
+			-webkit-tap-highlight-color transparent

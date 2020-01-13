@@ -1,0 +1,96 @@
+{% extends '@BankiruInsurance/main.html.twig' %}
+
+{% block body %}
+	<div class="padding-left-default padding-right-default padding-bottom-default">
+		<div class="layout-columns-wrapper">
+			<main class="layout-column-center">
+
+				<h1 class="header-h0">Электронное ОСАГО</h1>
+
+				<section class="widget" id="react-auto-form" data-test="auto-form">
+					<div class="ui-loading-overlay-big ui-loading-hidden-content"></div>
+				</section>
+			</main>
+			<aside class="layout-column-right">
+
+				<section class="widget hidden--lg-down" id="react-auto-tips" data-test="auto-tips"></section>
+
+				<div class="hidden--md-down">
+					{{ render(controller('BankiruInsuranceBundle:Widget:productCompare', {})) }}
+				</div>
+			</aside>
+		</div>
+	</div>
+	<div class="padding-left-default padding-right-default padding-bottom-default">
+		<div class="grid__row">
+			<div class="grid__cell">
+				<div id="react-result" class="result" data-test="auto-result"></div>
+				<div id="auto-explanation-widget" class="hidden--md-down" data-test="auto-explanation-widget"></div>
+			</div>
+		</div>
+	</div>
+	<div class="grid__row--v-lg">
+		<div class="grid__cell">
+			<div class="padding-left-default padding-right-default">
+				<div class="is-center" data-ajax-widget='/widget/BankiruInsuranceBundle:Widget:partnerCompanies'>
+					<div class="ui-loader-icon-big"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid__row--v-lg">
+		<div class="grid__cell">
+			<div class="padding-default">
+
+				{% set routeToSeoBlockIdMap = {
+					'bankiru_insurance_order_autocalc_insurance_type_company_geo': 5,
+					'bankiru_insurance_order_autocalc_insurance_type_company_geo2': 5
+				} %}
+			</div>
+		</div>
+	</div>
+
+	<script>
+		banki.utils.domReady.push(function() {
+
+			define('auto.tracking', function() {
+				return null;
+			});
+
+			define('auto.seo-data', function() {
+				return null;
+			});
+
+			define('auto.config', function() {
+				return {
+					special: {% if special_offer is defined and special_offer != null %}{% autoescape false %}{{ special_offer|json_encode() }}{% endautoescape %}{% else %}{{ 'null' }}{% endif %},
+					widget: null,
+					data: {
+						type: 'osago'
+					},
+					isVerificationRequired: false
+				};
+			});
+
+			require(['{{ static_asset('/static/bundles/ui-2013/InsuranceBundle/scripts/apps/e-osago-page.js') }}'], function(eosagoPage) {
+				const urlSplit = window.location.href.split('/');
+				const hashRef = urlSplit[urlSplit.length - 2];
+				eosagoPage.default({
+					hashRef,
+					formElement: document.getElementById('react-auto-form'),
+					resultElement: document.getElementById('react-result'),
+					tipsWidgetElement: document.getElementById('react-auto-tips'),
+					explanationWidgetElement: document.getElementById('auto-explanation-widget'),
+				});
+			});
+
+			require(['{{ static_asset('/static/bundles/ui-2013/InsuranceBundle/scripts/apps/e-osago-checkout.js') }}'], function(checkout) {
+				checkout.default();
+			});
+		});
+	</script>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}

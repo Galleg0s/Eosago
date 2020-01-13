@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="344px" height="168px" viewBox="0 0 344 168" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>C0CF05C1-2E54-4EDA-B1D0-DA98773788E2</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="799" height="382" rx="4"></rect>
+        <filter x="-0.4%" y="-0.7%" width="100.9%" height="101.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Выдача" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pics" transform="translate(-306.000000, -559.000000)">
+            <rect fill="#F4F4F4" x="0" y="0" width="1795" height="1859"></rect>
+            <g id="Group-2" transform="translate(78.000000, 527.000000)">
+                <g id="Rectangle-8">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g transform="translate(228.000000, 32.000000)">
+                    <path d="M94,67 L111,67 C119.836556,67 127,59.836556 127,51 C127,42.163444 119.836556,35 111,35 L115,35 C106.163444,35 99,27.836556 99,19 C99,10.163444 106.163444,3 115,3 L263,3 C271.836556,3 279,10.163444 279,19 C279,27.836556 271.836556,35 263,35 L242,35 L230,35 C221.163444,35 214,42.163444 214,51 C214,59.836556 221.163444,67 230,67 L231,67 C239.836556,67 247,74.163444 247,83 C247,91.836556 239.836556,99 231,99 L236,99 C227.163444,99 220,106.163444 220,115 C220,123.836556 227.163444,131 236,131 L255.580231,131 C261.665282,133.26465 266,139.126111 266,146 C266,154.836556 258.836556,162 250,162 L96,162 C87.163444,162 80,154.836556 80,146 C80,139.126111 84.3347176,133.26465 90.419769,131 L90.2098845,131 L96,131 C104.836556,131 112,123.836556 112,115 C112,106.163444 104.836556,99 96,99 L86.5,99 L83,99 C74.163444,99 67,91.836556 67,83 C67,74.163444 74.163444,67 83,67 L94,67 Z M272,67 L276,67 C284.836556,67 292,74.163444 292,83 C292,91.836556 284.836556,99 276,99 L272,99 C263.163444,99 256,91.836556 256,83 C256,74.163444 263.163444,67 272,67 Z" id="Combined-Shape" fill="#F4F4F4"></path>
+                    <g id="Group" transform="translate(130.000000, 17.000000)">
+                        <path d="M75.0004,135 L8.0004,135 C3.5814,135 0.000400000001,131.418 0.000400000001,127 L0.000400000001,9 C0.000400000001,4.582 3.5814,1 8.0004,1 L75.0004,1 C79.4184,1 83.0004,4.582 83.0004,9 L83.0004,127 C83.0004,131.418 79.4184,135 75.0004,135 Z" id="Stroke-1" fill="#EBF9FF"></path>
+                        <rect id="Rectangle-3" fill="#FFFFFF" x="1" y="12" width="3" height="102"></rect>
+                        <rect id="Rectangle-3" fill="#FFFFFF" x="1" y="12" width="81" height="3"></rect>
+                        <path d="M12,0 L72,0 C78.627417,-1.21743675e-15 84,5.372583 84,12 L0,12 L0,12 C-8.11624501e-16,5.372583 5.372583,1.21743675e-15 12,0 Z" id="Rectangle-2" fill="#FFFFFF"></path>
+                        <path d="M10,115 L74,115 C79.5228475,115 84,119.477153 84,125 L84,135 L0,135 L0,125 C-6.76353751e-16,119.477153 4.4771525,115 10,115 Z" id="Rectangle-2" fill="#FFFFFF" transform="translate(42.000000, 125.000000) scale(1, -1) translate(-42.000000, -125.000000) "></path>
+                        <path d="M75.0004,135 L8.0004,135 C3.5814,135 0.000400000001,131.418 0.000400000001,127 L0.000400000001,9 C0.000400000001,4.582 3.5814,1 8.0004,1 L75.0004,1 C79.4184,1 83.0004,4.582 83.0004,9 L83.0004,127 C83.0004,131.418 79.4184,135 75.0004,135 Z" id="Stroke-1" stroke="#7E8595" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M0,11 L83,11" id="Stroke-3" stroke="#7E8595" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M0,115 L83,115" id="Stroke-5" stroke="#7E8595" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M46.5004,125 C46.5004,127.762 44.2614,130 41.5004,130 C38.7384,130 36.5004,127.762 36.5004,125 C36.5004,122.238 38.7384,120 41.5004,120 C44.2614,120 46.5004,122.238 46.5004,125 Z" id="Stroke-8" stroke="#7E8595" stroke-width="2"></path>
+                        <path d="M64.5004,74 L18.5004,74 C16.2914,74 14.5004,72.209 14.5004,70 L14.5004,49 C14.5004,46.791 16.2914,45 18.5004,45 L64.5004,45 C66.7094,45 68.5004,46.791 68.5004,49 L68.5004,70 C68.5004,72.209 66.7094,74 64.5004,74 Z" id="Stroke-10" stroke="#29B6F6" stroke-width="2" fill="#FFFFFF"></path>
+                        <text id="***" font-family="ConcertOne-Regular, Concert One" font-size="20" font-weight="normal" fill="#EF2D1D">
+                            <tspan x="24.0098" y="66.4160156">***</tspan>
+                        </text>
+                        <path d="M34.5,6 L48.5,6" id="Stroke-12" stroke="#7E8595" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

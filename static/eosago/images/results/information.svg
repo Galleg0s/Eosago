@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>ICON / 40 / Color / Basic / Information</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ICON-/-40-/-Color-/-Basic-/-Information" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="boundbox" points="0 0 40 0 40 40 0 40"></polygon>
+        <path d="M36,20 C36,28.822 28.822,36 20,36 C11.178,36 4,28.822 4,20 C4,11.178 11.178,4 20,4 C28.822,4 36,11.178 36,20 M38,20 C38,10.075 29.925,2 20,2 C10.075,2 2,10.075 2,20 C2,29.925 10.075,38 20,38 C29.925,38 38,29.925 38,20" id="icon" fill="#28467F"></path>
+        <path d="M20,16 C20.553,16 21,16.448 21,17 L21,27 C21,27.5125714 20.6145765,27.9354694 20.1167533,27.9932682 L20,28 C19.447,28 19,27.552 19,27 L19,17 C19,16.448 19.447,16 20,16 Z M20,12 C20.553,12 21,12.448 21,13 C21,13.552 20.553,14 20,14 C19.448,14 19,13.552 19,13 C19,12.448 19.448,12 20,12 Z" id="Combined-Shape" fill="#F48100"></path>
+    </g>
+</svg>

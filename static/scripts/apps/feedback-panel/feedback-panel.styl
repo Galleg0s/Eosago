@@ -1,0 +1,37 @@
+@require '~react-ui-2018/style-constants/indents.styl'
+@require '~react-ui-2018/style-constants/colors.styl'
+@require '~react-ui-2018/style-constants/z-index.styl'
+@require '~react-ui-2018/style-constants/shadows.styl'
+
+.feedback-panel
+	overflow hidden
+	position fixed
+	bottom $indentXS
+	right $indentXS
+	display inline-block
+	border-radius 100px
+	background-color $colorMajorDarkBlue
+	textWeightMedium()
+	textWeightMedium()
+	z-index $popupZIndex
+	shadowLevel3()
+
+	&__content,
+	&__show
+		padding $indentS
+
+		&:hover
+			background-color $colorMinorLightBlue
+
+			*
+				color $colorMinorLightBlue2
+
+	&__close
+		padding $indentS
+		border-left 1px solid $whiteTrans2
+
+		&:hover
+			background-color $colorMinorLightBlue
+
+			*
+				opacity 1

@@ -1,0 +1,25 @@
+@require '~react-ui-2018/style-constants/colors.styl'
+@require '~react-ui-2018/style-constants/indents.styl'
+@require '~react-ui-2018/style-constants/shadows.styl'
+@require '~react-ui-2018/style-constants/text.styl'
+
+.clickable
+	cursor pointer
+	user-select none
+
+.dropdownWrapper
+	min-width 100%
+
+.dropDownItem
+	textSize5()
+	padding $indentXS $indentS
+	display flex
+	align-items center
+	cursor pointer
+
+	&:hover
+		background-color $colorMinorBlackLighten2
+
+.selectedItemIcon
+	color $colorMajorGreen
+	margin-left auto

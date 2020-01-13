@@ -1,0 +1,58 @@
+@import '../../../../../../node_modules/animate.css'
+
+// common (guide, mixins, polyfills)
+@import '~ui-2013/guideline'
+@import '~ui-2013/styles/borders' // from core
+@import '~ui-2013/mixins'
+@import '~ui-2013/polyfills' // from core
+
+// core.styl
+// * common stuff
+@import '~ui-2013/reset'
+@import '~ui-2013/z-index'
+@import '~ui-2013/styles/helpers.styl'
+// * typography
+@import '~ui-2013/typography/typography'
+@import '~ui-2013/typography/lists'
+// * flat-ui colors and shadows (classes)
+@import '~ui-2013/styles/colors'
+@import '~ui-2013/styles/shadows'
+// * grids
+@import '~ui-2013/grids/common'
+@import '~ui-2013/grids/indents'
+@import '~ui-2013/grids/columns'
+@import '~ui-2013/grids/inline-elements'
+@import '~ui-2013/grids/grid-vert-list'
+// * ui-elements
+@import '~ui-2013/ui-elements/alert/alert'
+@import '~ui-2013/ui-elements/button/button'
+@import '~ui-2013/ui-elements/button-switcher/button-switcher'
+@import '~ui-2013/ui-elements/checkbox/checkbox'
+@import '~ui-2013/ui-elements/city-column-list/city-column-list'
+@import '~ui-2013/ui-elements/form/form'
+@import '~ui-2013/ui-elements/form-inputs/form-inputs'
+@import '~ui-2013/ui-elements/links/links'
+@import '~ui-2013/ui-elements/loader-icon/loader-icon'
+@import '~ui-2013/ui-elements/nanoscroller/nanoscroller'
+@import '~ui-2013/ui-elements/notice/notice'
+@import '~ui-2013/ui-elements/panels/panels'
+@import '~ui-2013/ui-elements/popup/popup'
+@import '~ui-2013/ui-elements/pseudo-tabs/pseudo-tabs'
+@import '~ui-2013/ui-elements/radio-button/radio-button'
+@import '~ui-2013/components/range-slider/range-slider'
+@import '~ui-2013/components/select/select'
+@import '~ui-2013/ui-elements/slider/slider-modern'
+@import '~ui-2013/ui-elements/tables/tables'
+@import '~ui-2013/ui-elements/tooltip/tooltip'
+@import '~ui-2013/ui-elements/widget/widget'
+// * components
+@import '~ui-2013/icons/icons'
+
+// stuff from core
+.popup-shadow
+	position relative
+	z-index 1
+	shadowLevel2()
+
+.popup-shadow-inline
+	shadowLevel2()
